@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- References -->
+<!--https://www.mkyong.com/android/android-tablelayout-example/-->
+<!--https://abhiandroid.com/ui/tablelayout-->
+<!--https://developer.android.com/guide/topics/ui/layout/grid-->
+<!--https://www.tutorialspoint.com/android/android_table_layout.htm-->
+<!---->
+
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tableLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+    android:orientation="vertical"
+    tools:context=".TitleProgressActivity">
+
+    <TableRow android:padding="5sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/TitleTitlesProg"
+            android:layout_marginBottom="20dp"
+            android:layout_span="5"
+            android:gravity="center_horizontal"
+            android:text="@string/btnCurrProgress"
+            android:textColor="@color/colorTextPrimaryLight"
+            android:background="@color/colorPrimaryDark"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow android:padding="5sp">
+
+        <TextView
+            android:layout_span="5"
+            android:layout_gravity="center_horizontal"
+            android:text="( TableLayout Demo)"
+            android:textSize="10dp"
+            android:padding="3sp"
+            />
+    </TableRow>
+
+    <!-- just draw a horizontal line -->
+    <View
+        android:layout_height="2dip"
+        android:background="@color/colorPrimaryDark" />
+
+    <TableRow android:padding="5sp">
+
+        <TextView
+            android:layout_span="5"
+            android:layout_gravity="center_horizontal"
+            android:text="Luna's Progress"
+            android:textSize="20sp"
+            android:padding="3sp"
+            android:textStyle="bold"
+            />
+    </TableRow>
+
+    <TableRow android:padding="5sp">
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="M-FAST pts"
+            android:textSize="10sp"
+            android:layout_column="0"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="M-JWW Q's"
+            android:textSize="10sp"
+            android:layout_column="1"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="M-STD Q's"
+            android:textSize="10sp"
+            android:layout_column="2"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="Dbl Q's"
+            android:textSize="10sp"
+            android:layout_column="3"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="CH Pts"
+            android:textSize="10sp"
+            android:layout_column="4"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="125"
+            android:textSize="20sp"
+            android:layout_column="0"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="19"
+            android:textSize="20sp"
+            android:layout_column="1"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="24"
+            android:textSize="20sp"
+            android:layout_column="2"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="11"
+            android:textSize="20sp"
+            android:layout_column="3"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="253"
+            android:textSize="20sp"
+            android:layout_column="4"
+            />
+
+    </TableRow>
+
+    <!-- just draw a horizontal line -->
+    <View
+        android:layout_height="2dip"
+        android:background="@color/colorPrimaryDark" />
+
+    <TableRow android:padding="5sp">
+
+        <TextView
+            android:layout_span="5"
+            android:layout_gravity="center_horizontal"
+            android:text="Sola's Progress"
+            android:textSize="20sp"
+            android:padding="3sp"
+            android:textStyle="bold"
+            />
+    </TableRow>
+
+    <TableRow android:padding="5sp">
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="M-FAST pts"
+            android:textSize="10sp"
+            android:layout_column="0"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="M-JWW Q's"
+            android:textSize="10sp"
+            android:layout_column="1"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="M-STD Q's"
+            android:textSize="10sp"
+            android:layout_column="2"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="Dbl Q's"
+            android:textSize="10sp"
+            android:layout_column="3"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="CH Pts"
+            android:textSize="10sp"
+            android:layout_column="4"
+            />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="15"
+            android:textSize="20sp"
+            android:layout_column="0"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="3"
+            android:textSize="20sp"
+            android:layout_column="1"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="7"
+            android:textSize="20sp"
+            android:layout_column="2"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="2"
+            android:textSize="20sp"
+            android:layout_column="3"
+            />
+
+        <TextView
+            android:gravity="center_horizontal"
+            android:text="37"
+            android:textSize="20sp"
+            android:layout_column="4"
+            />
+
+    </TableRow>
+
+    <!-- just draw a horizontal line -->
+    <View
+        android:layout_height="2dip"
+        android:background="@color/colorPrimaryDark" />
+
+
+</TableLayout>

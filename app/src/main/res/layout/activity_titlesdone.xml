@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--References-->
+<!--https://developer.android.com/reference/android/widget/GridLayout.LayoutParams-->
+<!--https://developer.samsung.com/galaxy/others/gridlayout-in-android-->
+<!--https://code.tutsplus.com/tutorials/android-user-interface-design-creating-a-numeric-keypad-with-gridlayout-
+            -mobile-8677-->
+<!--https://stackoverflow.com/questions/10016343/gridlayout-not-gridview-how-to-stretch-all-children-evenly/15341447-->
+
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_titlesdone"
+    android:layout_gravity="center"
+    android:orientation="horizontal"
+    tools:context=".TitlesDoneActivity"
+    android:alignmentMode="alignBounds"
+    android:columnCount="3"
+    android:rowCount="7"
+    >
+
+    <TextView
+        android:id="@+id/TitleTitlesDone"
+        android:text="@string/btnTitlesDone"
+        android:layout_margin="5dp"
+        android:padding="10sp"
+        android:textSize="45sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:layout_columnSpan="3"
+    android:layout_gravity="fill_horizontal"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text="( GridLayout Demo)"
+        android:textSize="10dp"
+        android:padding="3sp"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text="Luna's Titles"
+        android:textSize="20sp"
+        android:padding="3sp"
+        android:textStyle="bold"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text=" M-FAST "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:text=" M-JWW "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:text=" M-STD "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text="Sola's Titles"
+        android:textSize="20sp"
+        android:padding="3sp"
+        android:textStyle="bold"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text=" M-FAST "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:text=" M-JWW "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:text=" M-STD "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text="Cosmo's Titles"
+        android:textSize="20sp"
+        android:padding="3sp"
+        android:textStyle="bold"
+        android:layout_columnSpan="3"
+        android:layout_gravity="fill_horizontal"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:text=" X-FAST "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:text=" O-JWW "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+    <TextView
+        android:text=" N-STD "
+        android:layout_columnWeight="1"
+        android:layout_gravity="fill"
+        android:gravity="center_horizontal"
+        />
+
+
+
+</GridLayout>

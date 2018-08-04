@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_doglist"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".DogListActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TitleDogList"
+        android:text="@string/btnDogList"
+        android:textSize="45sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:layout_margin="5dp"
+        android:padding="10sp"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" (Linear Layout Hybrid Vert and Horz)"
+        android:textSize="10sp"
+        android:padding="3sp"
+        android:gravity="center_horizontal"
+        />
+
+    <View style="@style/Divider"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20sp"
+        android:gravity="center_horizontal"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDog1"
+            android:text="@string/dog1"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:padding="5sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDog2"
+            android:text="@string/dog2"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:padding="5sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDog3"
+            android:text="@string/dog3"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:padding="5sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDog4"
+            android:text="@string/dog4"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:padding="5sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textDog5"
+            android:text="@string/dog5"
+            android:textSize="20sp"
+            android:layout_marginTop="20sp"
+            android:padding="5sp"
+            />
+
+
+    </LinearLayout>
+
+    <View style="@style/Divider"/>
+
+</LinearLayout>
