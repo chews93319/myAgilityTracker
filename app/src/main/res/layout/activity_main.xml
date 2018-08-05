@@ -44,8 +44,8 @@
         android:layout_above="@id/btnTitlesDone"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toRightOf="@+id/centerTemp"
-        android:layout_toEndOf="@+id/centerTemp"
+        android:layout_toRightOf="@id/centerTemp"
+        android:layout_toEndOf="@id/centerTemp"
         />
 
     <Button
@@ -53,17 +53,38 @@
         android:layout_height="wrap_content"
         android:id="@+id/btnTitlesDone"
         android:text="@string/btnTitlesDone"
-        android:layout_marginBottom="100dp"
-        android:layout_above="@+id/textDemoDesc"
+        android:layout_marginBottom="50dp"
+        android:layout_above="@id/btnAddLocation"
         android:gravity="center"
         android:layout_centerHorizontal="true"
         />
+
+    <Button
+        android:id="@+id/btnAddLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/textDemoDesc"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="center"
+        android:text="@string/btnAddLocation"
+        android:visibility="visible" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textDemoDesc"
         android:text="( Relative Layout Demo )"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_above="@id/myDebugMsg"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myDebugMsg"
+        android:text="test"
         android:layout_centerHorizontal="true"
         android:gravity="center"
         android:layout_alignParentBottom="true"

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/activity_addlocation"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".AddLocationActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TitleAddLoc"
+        android:text="@string/btnAddLocation"
+        android:textSize="45sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:layout_margin="5dp"
+        android:padding="10sp"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" (Lat and Lon Information)"
+        android:textSize="10sp"
+        android:padding="3sp"
+        android:gravity="center_horizontal"
+        />
+
+    <View style="@style/Divider"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textTitleLat"
+            android:text="Latitude"
+            android:textSize="20sp"
+            android:padding="5sp"
+            android:layout_weight="25"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textLat"
+            android:textSize="15sp"
+            android:padding="5sp"
+            android:layout_weight="75"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textTitleLon"
+            android:text="Longitude"
+            android:textSize="20sp"
+            android:padding="5sp"
+            android:layout_weight="25"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textLon"
+            android:textSize="15sp"
+            android:padding="5sp"
+            android:layout_weight="75"
+            />
+
+    </LinearLayout>
+
+
+
+    <View style="@style/Divider"/>
+
+</LinearLayout>

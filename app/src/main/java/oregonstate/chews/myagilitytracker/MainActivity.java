@@ -94,11 +94,13 @@ public class MainActivity extends AppCompatActivity
                 == PackageManager.PERMISSION_GRANTED)) {
             // Permission is already granted
             myDebugMsg.setText("Pre-existing Permission");
-            btnAddLocation.setVisibility(View.VISIBLE);
+            // Display and Enable ButtonView
+            //btnAddLocation.setVisibility(View.VISIBLE);
         } else {
             // Permission is currently missing and must be requested
             myDebugMsg.setText("No Existing Permission; Starting Request");
-            btnAddLocation.setVisibility(View.INVISIBLE);
+            // Display and Enable ButtonView
+            //btnAddLocation.setVisibility(View.INVISIBLE);
             requestLocationPermission();
         }
     }
