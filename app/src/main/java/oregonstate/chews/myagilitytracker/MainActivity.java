@@ -80,6 +80,16 @@ public class MainActivity extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        Button btnGoogleAPI = (Button) findViewById(R.id.btnGoogleAPI);
+        btnGoogleAPI.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, APIActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void checkLocationPermission() {

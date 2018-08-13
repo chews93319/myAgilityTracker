@@ -9,6 +9,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders = [
+                "appAuthRedirectScheme" : "oregonstate.chews.myagilitytracker"
+        ]
     }
     buildTypes {
         release {
@@ -39,4 +42,10 @@ dependencies {
 
     //Added to enable GPS action via gms
     implementation 'com.google.android.gms:play-services-location:11.0.4'
+
+    //Added to implement the AppAuth OAuth2 functionality
+    implementation 'net.openid:appauth:0.5.1'
+
+    //Added to implement the okhttp3 functionality
+    implementation 'com.squareup.okhttp3:okhttp:3.6.0'
 }
