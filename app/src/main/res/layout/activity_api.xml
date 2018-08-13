@@ -33,24 +33,41 @@
 
     <View style="@style/Divider"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="100">
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:layout_weight="97"
+            android:id="@+id/inputPost"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="Post"
+            android:id="@+id/btnPost"
+            />
+    </LinearLayout>
+
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Get Posts"
         android:id="@+id/btngplus_getpost"
         />
 
-    <TextView
+    <View style="@style/Divider"/>
+
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textAccessToken"
-        android:textSize="20sp"
-        android:layout_marginTop="20sp"
-        android:padding="5sp"
-        />
-
-
-
-    <View style="@style/Divider"/>
+        android:id="@+id/google_post_list"/>
 
 </LinearLayout>
