@@ -29,6 +29,10 @@
         </activity>
         <activity android:name=".AddLocationActivity">
         </activity>
+        <activity android:name=".APIActivity">
+        </activity>
+        <activity android:name=".AuthCompleteActivity">
+        </activity>
     </application>
 
 </manifest>

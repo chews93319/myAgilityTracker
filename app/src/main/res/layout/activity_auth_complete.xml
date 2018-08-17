@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    tools:context=".AuthCompleteActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/TitleAuthComplete"
+        android:text="Auth Complete Layout"
+        android:textSize="45sp"
+        android:background="@color/colorPrimaryDark"
+        android:textColor="@color/colorTextPrimaryLight"
+        android:layout_margin="5dp"
+        android:padding="10sp"
+        android:gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=" (Auth Complete Temp Screen)"
+        android:textSize="10sp"
+        android:padding="3sp"
+        android:gravity="center_horizontal"
+        />
+
+    <View style="@style/Divider"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textAuthComplete"
+        android:textSize="20sp"
+        android:layout_marginTop="20sp"
+        android:padding="5sp"
+        />
+
+
+
+    <View style="@style/Divider"/>
+
+</LinearLayout>
