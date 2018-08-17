@@ -126,6 +126,67 @@ public class APIActivity extends AppCompatActivity {
             }
         });
 
+        ((Button)findViewById(R.id.btngplus_user)).setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                try{
+                    mAuthState.performActionWithFreshTokens(mAuthorizationService, new AuthState.AuthStateAction(){
+                        @Override
+                        public void execute(@Nullable String accessToken, @Nullable String idToken, @Nullable AuthorizationException e) {
+                            if (e == null){
+                                mOkHttpClient = new OkHttpClient();
+                                HttpUrl reqUrl = HttpUrl.parse("https://www.googleapis.com/plusDomains/v1/people/me");
+                                Request request = new Request.Builder()
+                                        .url(reqUrl)
+                                        .addHeader("Authorization", "Bearer " + accessToken)
+                                        .build();
+                                mOkHttpClient.newCall(request).enqueue(new Callback() {
+                                    @Override
+                                    public void onFailure(Call call, IOException e) {
+                                        e.printStackTrace();
+                                    }
+
+                                    @Override
+                                    public void onResponse(Call call, Response response) throws IOException {
+                                        String r = response.body().string();
+                                        Log.d(TAG, r);
+
+                                        try {
+                                            JSONObject j = new JSONObject(r);
+                                            List<Map<String,String>> posts = new ArrayList<>();
+                                            HashMap<String, String> m = new HashMap<>();
+
+                                            m.put("published", j.getString("id"));  //u_id
+                                            m.put("title",j.getString("displayName"));  //u_name
+                                            posts.add(m);
+
+                                            final SimpleAdapter postAdapter = new SimpleAdapter(
+                                                    APIActivity.this,
+                                                    posts,
+                                                    R.layout.google_plus_item,
+                                                    new String[]{"published", "title"},
+                                                    new int[]{R.id.google_plus_item_date_text, R.id.google_plus_item_text});
+                                            runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    ((ListView)findViewById(R.id.google_post_list)).setAdapter(postAdapter);
+                                                }
+                                            });
+                                        } catch (JSONException e1) {
+                                            e1.printStackTrace();
+                                        }
+                                    }
+                                });
+
+                            }
+                        }
+                    });
+                } catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        });
+
         ((Button)findViewById(R.id.btnPost)).setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

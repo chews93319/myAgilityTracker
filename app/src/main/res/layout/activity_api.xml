@@ -56,12 +56,26 @@
             />
     </LinearLayout>
 
-    <Button
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Get Posts"
-        android:id="@+id/btngplus_getpost"
-        />
+        android:orientation="horizontal"
+        tools:weightSum="100">
+
+        <Button
+            android:id="@+id/btngplus_getpost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:text="Get Posts" />
+
+        <Button
+            android:id="@+id/btngplus_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="90"
+            android:text="\?" />
+    </LinearLayout>
 
     <View style="@style/Divider"/>
 
