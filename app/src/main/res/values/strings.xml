@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">myAgilityTracker</string>
     <string name="btnDogList">Dog List</string>
-    <string name="btnQualHist">Qualifier History</string>
+    <string name="btnQualHist">Q Runs</string>
     <string name="btnCurrProgress">Current Progress</string>
     <string name="btnTitlesDone">Titles Completed</string>
     <string name="btnAddLocation">Add Location</string>

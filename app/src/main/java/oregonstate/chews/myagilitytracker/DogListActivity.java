@@ -1,5 +1,6 @@
 package oregonstate.chews.myagilitytracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -38,6 +39,7 @@ public class DogListActivity extends AppCompatActivity {
     private static final String TAG = "APIActivity";
 
     String userID = null;
+    String strURL = null;
     ListView lvDogs;
 
     //  create OkHttpClient for http functionality
@@ -50,14 +52,27 @@ public class DogListActivity extends AppCompatActivity {
 
         // Ref [1]
         Bundle extras = getIntent().getExtras();
+        TextView mTitle = (TextView)findViewById(R.id.TitleDogList);
         if (extras != null){
             userID = extras.getString("userid");
+            Log.d(TAG,userID);
+            if (userID.length()>0) {
+                strURL = "https://cs496-chewsfinal-agilityapi.appspot.com/dogs/?userID="+userID;
+                Log.d(TAG, strURL);
+
+                mTitle.setText("Sam's " + mTitle.getText());
+            } else {
+                strURL = "https://cs496-chewsfinal-agilityapi.appspot.com/dogs";
+                Log.d(TAG, strURL);
+
+                mTitle.setText("All " + mTitle.getText());
+            }
         }
 
         ((TextView)findViewById(R.id.tv_apiUserId)).setText(userID);
 
         mOkHttpClient = new OkHttpClient();
-        HttpUrl reqUrl = HttpUrl.parse("https://cs496-chewsfinal-agilityapi.appspot.com/dogs/?userID="+userID);
+        HttpUrl reqUrl = HttpUrl.parse(strURL);
         Request mrequest = new Request.Builder()
             .url(reqUrl)
             .build();
@@ -70,7 +85,6 @@ public class DogListActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call call, Response response) throws IOException {
                 String r = response.body().string();
-                Log.d(TAG, "https://cs496-chewsfinal-agilityapi.appspot.com/dogs/?userID="+userID);
                 Log.d(TAG, r);
 
                 try {
@@ -99,7 +113,8 @@ public class DogListActivity extends AppCompatActivity {
 
                     runOnUiThread(new Runnable() {
                         @Override
-                        public void run() {lvDogs = (ListView)findViewById(R.id.doglist_names_list);
+                        public void run() {
+                            lvDogs = (ListView)findViewById(R.id.doglist_names_list);
                             lvDogs.setAdapter(namesAdapter);
                             setupListViewListener();
                         }
@@ -131,7 +146,14 @@ public class DogListActivity extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View item, int pos, long id) {
-                        Log.d(TAG, ((TextView) item.findViewById(R.id.dogid_text)).getText().toString());
+                        String apiDogID = ((TextView) item.findViewById(R.id.dogid_text)).getText().toString();
+                        String apiDogName = ((TextView) item.findViewById(R.id.dogname_text)).getText().toString();
+
+                        //  Open QualHistory for the specific Dog
+                        Intent intent = new Intent(DogListActivity.this, QualHistActivity.class);
+                        intent.putExtra("dogid",apiDogID);
+                        intent.putExtra("dogname",apiDogName);
+                        startActivity(intent);
                     }
                 }
 

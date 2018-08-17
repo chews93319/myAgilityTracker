@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
 
         //  Obtain the Userid from Google OAuth
 
-        //  H
+        //
 
         Userid = "933191613";
         apiUserID = "ah1tfmNzNDk2LWNoZXdzZmluYWwtYWdpbGl0eWFwaXIRCxIEVXNlchiAgIDAl6SACgw";
@@ -44,8 +44,9 @@ public class MainActivity extends AppCompatActivity
         checkLocationPermission();
 
 
-        Button btnDogList = (Button) findViewById(R.id.btnDogList);
-        btnDogList.setOnClickListener(new View.OnClickListener(){
+        Button btnSamDogs = (Button) findViewById(R.id.btnSamDogs);
+        btnSamDogs.setText("Sam's " + btnSamDogs.getText());
+        btnSamDogs.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
@@ -55,12 +56,26 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        Button btnDogList = (Button) findViewById(R.id.btnDogList);
+        btnDogList.setText("All " + btnDogList.getText());
+        btnDogList.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, DogListActivity.class);
+                intent.putExtra("userid","");   // Ref [1]
+                startActivity(intent);
+            }
+        });
+
         Button btnQualList = (Button) findViewById(R.id.btnQualList);
+        btnQualList.setText("All " + btnQualList.getText());
         btnQualList.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, QualHistActivity.class);
+                intent.putExtra("dogid","");
                 startActivity(intent);
             }
         });
