@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:weightSum="100"
+    >
+
+    <TextView
+        android:id="@+id/dogname_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="33"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:text="Col1" />
+
+    <TextView
+        android:id="@+id/dogdob_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="33"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:text="Col2" />
+
+    <TextView
+        android:id="@+id/dogid_text"
+        android:layout_width="10sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="33"
+        android:textAlignment="center"
+        android:textSize="4sp"
+        android:text="Col3"
+        android:visibility="invisible"/>
+
+</LinearLayout>

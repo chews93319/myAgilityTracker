@@ -12,7 +12,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-
+/*  References:
+ *     [1] https://stackoverflow.com/questions/32748482/get-variable-from-another-activity-android-studio/32748568
+ *
+ *
+ * */
 
 public class MainActivity extends AppCompatActivity
         implements ActivityCompat.OnRequestPermissionsResultCallback {
@@ -20,6 +24,8 @@ public class MainActivity extends AppCompatActivity
     private static final int LOCATION_PERMISSION_RESULT = 17;
 
     private TextView myDebugMsg;
+    private String Userid;
+    private String apiUserID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +33,14 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         myDebugMsg = (TextView) findViewById(R.id.myDebugMsg);
-        myDebugMsg.setText("Main onCreate Started");
+
+        //  Obtain the Userid from Google OAuth
+
+        //  H
+
+        Userid = "933191613";
+        apiUserID = "ah1tfmNzNDk2LWNoZXdzZmluYWwtYWdpbGl0eWFwaXIRCxIEVXNlchiAgIDAl6SACgw";
+        myDebugMsg.setText(Userid);
         checkLocationPermission();
 
 
@@ -37,6 +50,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, DogListActivity.class);
+                intent.putExtra("userid",apiUserID);   // Ref [1]
                 startActivity(intent);
             }
         });
@@ -92,6 +106,10 @@ public class MainActivity extends AppCompatActivity
         });
     }
 
+    public String getApiUserID(){
+        return apiUserID;
+    }
+
     private void checkLocationPermission() {
 
         myDebugMsg = (TextView) findViewById(R.id.myDebugMsg);
@@ -103,12 +121,12 @@ public class MainActivity extends AppCompatActivity
                 (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED)) {
             // Permission is already granted
-            myDebugMsg.setText("Pre-existing Permission");
+            myDebugMsg.setText(Userid + " Pre-existing Permission");
             // Display and Enable ButtonView
             //btnAddLocation.setVisibility(View.VISIBLE);
         } else {
             // Permission is currently missing and must be requested
-            myDebugMsg.setText("No Existing Permission; Starting Request");
+            myDebugMsg.setText(Userid + " No Existing Permission; Starting Request");
             // Display and Enable ButtonView
             //btnAddLocation.setVisibility(View.INVISIBLE);
             requestLocationPermission();
@@ -133,10 +151,10 @@ public class MainActivity extends AppCompatActivity
             case LOCATION_PERMISSION_RESULT: {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    myDebugMsg.setText("Request Allowed");
+                    myDebugMsg.setText(Userid + " Request Allowed");
                     btnAddLocation.setVisibility(View.VISIBLE);
                 } else {
-                    myDebugMsg.setText("Request Denied");
+                    myDebugMsg.setText(Userid + " Request Denied");
                 }
                 return;
             }
