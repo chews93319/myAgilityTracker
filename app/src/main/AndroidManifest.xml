@@ -21,7 +21,11 @@
         </activity>
         <activity android:name=".DogListActivity">
         </activity>
+        <activity android:name=".DogEditActivity">
+        </activity>
         <activity android:name=".QualHistActivity">
+        </activity>
+        <activity android:name=".QualEditActivity">
         </activity>
         <activity android:name=".TitleProgressActivity">
         </activity>

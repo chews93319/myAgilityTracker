@@ -5,6 +5,8 @@
     <string name="btnCurrProgress">Current Progress</string>
     <string name="btnTitlesDone">Titles Completed</string>
     <string name="btnAddLocation">Add Location</string>
+    <string name="TitleDogInfo">Dog Info:</string>
+    <string name="TitleQInfo">Qual Info:</string>
     <string name="dog1">Luna</string>
     <string name="dog2">Sola</string>
     <string name="dog3">Cosmo</string>

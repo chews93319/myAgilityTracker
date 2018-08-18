@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:id="@+id/activity_qualhist"
     android:orientation="vertical"
+    android:gravity="center_horizontal"
     tools:context=".QualHistActivity">
 
     <TextView
@@ -26,7 +27,19 @@
         android:layout_height="wrap_content"
         android:text="( LinearVertical and ListView Demo )"
         android:gravity="center_horizontal"
+        android:visibility="gone"
         />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Q Run"
+        android:id="@+id/btnNewQ"
+        android:onClick="onClick_NewQ"
+        />
+
+
+
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"

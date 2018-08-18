@@ -28,7 +28,7 @@
         android:textSize="10sp"
         android:padding="3sp"
         android:gravity="center_horizontal"
-        android:visibility="invisible"
+        android:visibility="gone"
         />
 
     <TextView
@@ -38,7 +38,15 @@
         android:gravity="center_horizontal"
         android:padding="3sp"
         android:textSize="10sp"
-        android:visibility="invisible" />
+        android:visibility="gone" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Dog"
+        android:id="@+id/btnNewDog"
+        android:onClick="onClick_NewDog"
+        />
 
     <View style="@style/Divider"/>
 

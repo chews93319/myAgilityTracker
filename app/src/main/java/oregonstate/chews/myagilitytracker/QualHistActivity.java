@@ -92,6 +92,10 @@ public class QualHistActivity extends AppCompatActivity {
             }
         }
 
+        populateQList();
+    }
+
+    public void populateQList(){
         mOkHttpClient = new OkHttpClient();
         HttpUrl reqUrl = HttpUrl.parse(strURL);
         Request mrequest = new Request.Builder()
@@ -118,13 +122,15 @@ public class QualHistActivity extends AppCompatActivity {
                         String tmptype = quals.getJSONObject(i).getString("runtype");
                         String tmpdate = quals.getJSONObject(i).getString("rundate");
                         String tmpscore = quals.getJSONObject(i).getString("qtime");
+                        String tmpQualId = quals.getJSONObject(i).getString("id");
 
                         //  build a qualevent object
                         QualEvent tmp = new QualEvent(
                                 tmpname,
                                 tmptype,
                                 tmpdate,
-                                tmpscore);
+                                tmpscore,
+                                tmpQualId);
 
                         //  add tmp object to array
                         Quals.add(tmp);
@@ -135,6 +141,7 @@ public class QualHistActivity extends AppCompatActivity {
                         Log.d(TAG,Quals.get(i).getDate());
                         Log.d(TAG,Quals.get(i).getGame());
                         Log.d(TAG,Quals.get(i).getPoints());
+                        Log.d(TAG,Quals.get(i).getQualId());
                     }
 
                     //  populate hardcoded information (for debug testing)
@@ -163,15 +170,6 @@ public class QualHistActivity extends AppCompatActivity {
     }
 
     public void setupListViewListener(){
-        lvQuals.setOnItemLongClickListener(
-                new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(AdapterView<?> parent, View item, int pos, long id) {
-                        Log.d(TAG, ((TextView) item.findViewById(R.id.textView1)).getText().toString());
-                        return true;
-                    }
-                }
-        );
 
         lvQuals.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
@@ -180,7 +178,7 @@ public class QualHistActivity extends AppCompatActivity {
                         String apiDogID = ((TextView) item.findViewById(R.id.textView1)).getText().toString();
                         String apiDogName = ((TextView) item.findViewById(R.id.textView2)).getText().toString();
 
-                        /*
+                        /*   Clone of DogListActivity gist, but not really applicable
                         //  Open QualHistory for the specific Dog
                         Intent intent = new Intent(DogListActivity.this, QualHistActivity.class);
                         intent.putExtra("dogid",apiDogID);
@@ -191,8 +189,43 @@ public class QualHistActivity extends AppCompatActivity {
                 }
 
         );
+
+        lvQuals.setOnItemLongClickListener(
+                new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View item, int pos, long id) {
+                        String apiQualID = ((TextView) item.findViewById(R.id.textView5)).getText().toString();
+
+                        // Open EditQual for the specific Qual
+                        Intent intent = new Intent(QualHistActivity.this, QualEditActivity.class);
+                        intent.putExtra("qualid", apiQualID);
+                        startActivity(intent);
+                        return true;
+                    }
+                }
+        );
     }
 
+    public void onClick_NewQ(View v){
+        // Open EditQual for a new Qual
+        Intent intent = new Intent(QualHistActivity.this, QualEditActivity.class);
+        intent.putExtra("qualid","");
+        if (dogID.length() > 0){
+            intent.putExtra("dogid",dogID);
+        }else {
+            intent.putExtra("dogid", "");
+        }
+
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        populateQList();
+    }
+
+    /*
     private void populateItems() {
         QualEvent new00 = new QualEvent("Luna","JWW","18/7/11","15");
         QualEvent new01 = new QualEvent("Luna","JWW","18/7/12","17");
@@ -231,4 +264,5 @@ public class QualHistActivity extends AppCompatActivity {
         Quals.add(new15);
         Quals.add(new16);
     }
+    */
 }

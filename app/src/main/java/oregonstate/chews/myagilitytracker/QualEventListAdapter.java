@@ -51,9 +51,10 @@ public class QualEventListAdapter extends ArrayAdapter<QualEvent> {
         String game = getItem(position).getGame();
         String date = getItem(position).getDate();
         String pts = getItem(position).getPoints();
+        String dogId = getItem(position).getQualId();
 
         //Create a temp QualEvent
-        QualEvent qtmp = new QualEvent(name, game, date, pts);
+        QualEvent qtmp = new QualEvent(name, game, date, pts, dogId);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);
@@ -62,11 +63,13 @@ public class QualEventListAdapter extends ArrayAdapter<QualEvent> {
         TextView tvGame = (TextView) convertView.findViewById(R.id.textView2);
         TextView tvDate = (TextView) convertView.findViewById(R.id.textView3);
         TextView tvPts = (TextView) convertView.findViewById(R.id.textView4);
+        TextView tvDogId = (TextView) convertView.findViewById(R.id.textView5);
 
         tvName.setText(name);
         tvGame.setText(game);
         tvDate.setText(date);
         tvPts.setText(pts);
+        tvDogId.setText(dogId);
 
         return convertView;
     }

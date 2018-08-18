@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity
         //
 
         Userid = "933191613";
-        apiUserID = "ah1tfmNzNDk2LWNoZXdzZmluYWwtYWdpbGl0eWFwaXIRCxIEVXNlchiAgIDAl6SACgw";
+        apiUserID = "ah1tfmNzNDk2LWNoZXdzZmluYWwtYWdpbGl0eWFwaXIRCxIEVXNlchiAgIDgycODCgw";
         myDebugMsg.setText(Userid);
         checkLocationPermission();
 

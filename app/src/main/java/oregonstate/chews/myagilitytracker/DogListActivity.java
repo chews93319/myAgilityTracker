@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
@@ -71,11 +72,16 @@ public class DogListActivity extends AppCompatActivity {
 
         ((TextView)findViewById(R.id.tv_apiUserId)).setText(userID);
 
+        populateDogList();
+
+    }
+
+    public void populateDogList(){
         mOkHttpClient = new OkHttpClient();
         HttpUrl reqUrl = HttpUrl.parse(strURL);
         Request mrequest = new Request.Builder()
-            .url(reqUrl)
-            .build();
+                .url(reqUrl)
+                .build();
         mOkHttpClient.newCall(mrequest).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
@@ -128,19 +134,9 @@ public class DogListActivity extends AppCompatActivity {
                 }
             }
         });
-
     }
 
     public void setupListViewListener(){
-        lvDogs.setOnItemLongClickListener(
-                new AdapterView.OnItemLongClickListener() {
-                    @Override
-                    public boolean onItemLongClick(AdapterView<?> parent, View item, int pos, long id) {
-                        Log.d(TAG, ((TextView) item.findViewById(R.id.dogid_text)).getText().toString());
-                        return true;
-                    }
-                }
-        );
 
         lvDogs.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
@@ -158,5 +154,42 @@ public class DogListActivity extends AppCompatActivity {
                 }
 
         );
+
+        lvDogs.setOnItemLongClickListener(
+                new AdapterView.OnItemLongClickListener() {
+                    @Override
+                    public boolean onItemLongClick(AdapterView<?> parent, View item, int pos, long id) {
+                        String apiDogID = ((TextView) item.findViewById(R.id.dogid_text)).getText().toString();
+                        String apiDogName = ((TextView) item.findViewById(R.id.dogname_text)).getText().toString();
+
+                        //  Open EditDog for the specific Dog
+                        Intent intent = new Intent(DogListActivity.this, DogEditActivity.class);
+                        intent.putExtra("dogid",apiDogID);
+                        intent.putExtra("dogname",apiDogName);
+                        startActivity(intent);
+                        return true;
+                    }
+                }
+        );
+    }
+
+    public void onClick_NewDog(View v){
+        // Open EditDog for a new dog
+        Intent intent = new Intent(DogListActivity.this, DogEditActivity.class);
+        intent.putExtra("dogid","");
+        intent.putExtra("dogname","");
+        if (userID.length() > 0){
+            intent.putExtra("userid",userID);
+        }else{
+            intent.putExtra("userid","");
+        }
+
+        startActivity(intent);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        populateDogList();
     }
 }

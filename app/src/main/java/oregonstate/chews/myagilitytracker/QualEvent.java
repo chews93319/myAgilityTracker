@@ -17,12 +17,14 @@ public class QualEvent {
     private String game;
     private String date;
     private String points;
+    private String qualid;
 
-    public QualEvent(String dogname, String game, String date, String points) {
+    public QualEvent(String dogname, String game, String date, String points, String qualid) {
         this.dogname = dogname;
         this.game = game;
         this.date = date;
         this.points = points;
+        this.qualid = qualid;
     }
 
     public String getDogname() {
@@ -56,4 +58,14 @@ public class QualEvent {
     public void setPoints(String points) {
         this.points = points;
     }
+
+    public String getQualId() {
+        return qualid;
+    }
+
+    public void setQualId(String qualid) {
+        this.qualid = qualid;
+    }
+
+
 }
