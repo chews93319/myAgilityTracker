@@ -39,14 +39,14 @@ public class MainActivity extends AppCompatActivity
         //
 
         Userid = "933191613";
-        apiUserID = "ah1tfmNzNDk2LWNoZXdzZmluYWwtYWdpbGl0eWFwaXIRCxIEVXNlchiAgIDgycODCgw";
+        apiUserID = "ah1tfmNzNDk2LWNoZXdzZmluYWwtYWdpbGl0eWFwaXIRCxIEVXNlchiAgICQsLOCCQw";
         myDebugMsg.setText(Userid);
         checkLocationPermission();
 
 
-        Button btnSamDogs = (Button) findViewById(R.id.btnSamDogs);
-        btnSamDogs.setText("Sam's " + btnSamDogs.getText());
-        btnSamDogs.setOnClickListener(new View.OnClickListener(){
+        Button btnUserDogs = (Button) findViewById(R.id.btnSamDogs);
+        btnUserDogs.setText("Sam's " + btnUserDogs.getText());
+        btnUserDogs.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
